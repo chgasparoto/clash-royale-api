@@ -40,12 +40,13 @@
     "@babel/core": "^7.3.4",
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.3.4",
+    "cz-conventional-changelog": "2.1.0",
     "jest": "^24.1.0",
     "jest-extended": "^0.11.1",
     "nodemon": "^1.18.10",
     "rimraf": "^2.6.3",
-    "standard": "^12.0.1",
-    "semantic-release": "^15.13.3"
+    "semantic-release": "^15.13.3",
+    "standard": "^12.0.1"
   },
   "jest": {
     "testEnvironment": "node",
@@ -53,7 +54,9 @@
       "jest-extended"
     ]
   },
-  "publishConfig": {
-    "access": "restricted"
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
