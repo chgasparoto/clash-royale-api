@@ -1,4 +1,4 @@
-import Client from '../index'
+import Client from '../src/index'
 
 const client = new Client()
 

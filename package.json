@@ -1,15 +1,16 @@
 {
   "name": "clash-royale-api",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "A Javascript wrapper for Oficial Clash Royale API",
   "main": "src/index.js",
   "scripts": {
     "start": "nodemon --exec babel-node src/index.js",
     "build": "babel src --out-dir dist",
     "serve": "node dist/index.js",
-    "test": "jest ./src/test/*spec.js",
+    "test": "jest ./tests/*spec.js",
     "test:watch": "npm test -- --watch",
-    "test:coverage": "npm test -- --coverage"
+    "test:coverage": "npm test -- --coverage",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
@@ -43,12 +44,16 @@
     "jest-extended": "^0.11.1",
     "nodemon": "^1.18.10",
     "rimraf": "^2.6.3",
-    "standard": "^12.0.1"
+    "standard": "^12.0.1",
+    "semantic-release": "^15.13.3"
   },
   "jest": {
     "testEnvironment": "node",
     "setupFilesAfterEnv": [
       "jest-extended"
     ]
+  },
+  "publishConfig": {
+    "access": "restricted"
   }
 }
