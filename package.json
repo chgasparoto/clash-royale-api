@@ -1,0 +1,41 @@
+{
+  "name": "clash-royale-api",
+  "version": "1.0.0",
+  "description": "A Javascript wrapper for Oficial Clash Royale API",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node src/index.js",
+    "build": "babel src --out-dir dist",
+    "serve": "node dist/index.js",
+    "test": "jest ./src/test/*spec.js",
+    "test:watch": "npm test -- --watch",
+    "test:coverage": "npm test -- --coverage"
+  },
+  "keywords": [
+    "clash royale",
+    "api"
+  ],
+  "author": "Cleber Gasparoto <chgasparoto@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "dotenv": "^6.2.0",
+    "query-string": "^6.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.4",
+    "jest": "^24.1.0",
+    "jest-extended": "^0.11.1",
+    "nodemon": "^1.18.10",
+    "rimraf": "^2.6.3"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "setupFilesAfterEnv": [
+      "jest-extended"
+    ]
+  }
+}
