@@ -3,11 +3,11 @@ import queryString from 'query-string'
 import 'dotenv/config'
 
 class Client {
-  constructor(token = null) {
+  constructor (token = null) {
     this.token = token || process.env.CLASH_ROYALE_API_TOKEN
   }
 
-  async request(route, query) {
+  async request (route, query) {
     try {
       const response = await axios({
         method: 'get',
@@ -25,12 +25,12 @@ class Client {
     }
   }
 
-  async cards() {
+  async cards () {
     const response = await this.request('cards')
     return response
   }
 
-  async clans(params) {
+  async clans (params) {
     let query = params
 
     if (typeof params === 'string') {
@@ -41,27 +41,27 @@ class Client {
     return response
   }
 
-  async clan(tag, path) {
-    const response = await this.request(`clans/${encodeURIComponent(tag)}/${path ? path : ''}`)
+  async clan (tag, path) {
+    const response = await this.request(`clans/${encodeURIComponent(tag)}/${path || ''}`)
     return response
   }
 
-  async locations(params = {}) {
+  async locations (params = {}) {
     const response = this.request('clans', params)
     return response
   }
 
-  async location(id, path) {
-    const response = await this.request(`clans/id/${path ? path : ''}`)
+  async location (id, path) {
+    const response = await this.request(`clans/id/${path || ''}`)
     return response
   }
 
-  async player(tag, path) {
-    const response = await this.request(`clans/${encodeURIComponent(tag)}/${path ? path : ''}`)
+  async player (tag, path) {
+    const response = await this.request(`clans/${encodeURIComponent(tag)}/${path || ''}`)
     return response
   }
 
-  async tournaments(params) {
+  async tournaments (params) {
     let query = params
 
     if (typeof params === 'string') {
@@ -72,12 +72,12 @@ class Client {
     return response
   }
 
-  async tournament(tag) {
+  async tournament (tag) {
     const response = this.request(`/tournaments/${encodeURIComponent(tag)}`)
     return response
   }
 
-  async globaltournaments() {
+  async globaltournaments () {
     const response = await this.request('globaltournaments')
     return response
   }

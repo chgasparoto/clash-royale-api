@@ -16,7 +16,7 @@ describe('Clash Royale API', () => {
     const response = await client.clans('hog')
     expect(response.items).toBeArray()
     expect(response.items[0]).toBeObject()
-    expect(response.items[0]).toContainAllKeys(["tag", "name", "type", "badgeId", "clanScore", "clanWarTrophies", "location", "requiredTrophies", "donationsPerWeek", "clanChestLevel", "clanChestMaxLevel", "members"])
+    expect(response.items[0]).toContainAllKeys(['tag', 'name', 'type', 'badgeId', 'clanScore', 'clanWarTrophies', 'location', 'requiredTrophies', 'donationsPerWeek', 'clanChestLevel', 'clanChestMaxLevel', 'members'])
     expect(response.items[0].location).toBeObject()
   })
 })
