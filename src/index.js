@@ -1,6 +1,10 @@
 import 'dotenv/config'
 
 import Card from './Card'
+import Clan from './Clan'
+import Location from './Location'
+import Player from './Player'
+import Tournament from './Tournament'
 
 import { requester } from './utils'
 
@@ -22,28 +26,28 @@ class Client {
       query = { name: params }
     }
 
-    const response = this.request(this.token, 'clans', query)
-    return response
+    const response = await this.request(this.token, 'clans', query)
+    return new Clan(response)
   }
 
   async clan (tag, path) {
     const response = await this.request(this.token, `clans/${encodeURIComponent(tag)}/${path || ''}`)
-    return response
+    return new Clan(response)
   }
 
   async locations (params = {}) {
     const response = this.request(this.token, 'clans', params)
-    return response
+    return new Location(response)
   }
 
   async location (id, path) {
     const response = await this.request(this.token, `clans/id/${path || ''}`)
-    return response
+    return new Location(response)
   }
 
   async player (tag, path) {
     const response = await this.request(this.token, `clans/${encodeURIComponent(tag)}/${path || ''}`)
-    return response
+    return new Player(response)
   }
 
   async tournaments (params) {
@@ -54,17 +58,17 @@ class Client {
     }
 
     const response = this.request(this.token, '/tournaments', query)
-    return response
+    return new Tournament(response)
   }
 
   async tournament (tag) {
     const response = this.request(this.token, `/tournaments/${encodeURIComponent(tag)}`)
-    return response
+    return new Tournament(response)
   }
 
   async globaltournaments () {
     const response = await this.request(this.token, 'globaltournaments')
-    return response
+    return new Tournament(response)
   }
 }
 
