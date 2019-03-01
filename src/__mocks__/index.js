@@ -41,4 +41,64 @@ export default class Client {
 
     return Promise.resolve(new Clan(data))
   }
+
+  clan () {
+    const data = {
+      'tag': 'string',
+      'name': 'string',
+      'badgeId': 0,
+      'type': 'string',
+      'clanScore': 0,
+      'requiredTrophies': 0,
+      'donationsPerWeek': 0,
+      'clanChestLevel': 0,
+      'clanChestMaxLevel': 0,
+      'members': 0,
+      'location': {
+        'id': 0,
+        'name': 'string',
+        'isCountry': true,
+        'countryCode': 'string'
+      },
+      'description': 'string',
+      'clanChestStatus': 'string',
+      'clanChestPoints': 0,
+      'memberList': [
+        {
+          'tag': 'string',
+          'name': 'string',
+          'expLevel': 0,
+          'trophies': 0,
+          'arena': {
+            'id': 0,
+            'name': 'string'
+          },
+          'role': 'leader',
+          'clanRank': 0,
+          'previousClanRank': 0,
+          'donations': 0,
+          'donationsReceived': 0,
+          'clanChestPoints': 0
+        },
+        {
+          'tag': 'string',
+          'name': 'string',
+          'expLevel': 0,
+          'trophies': 0,
+          'arena': {
+            'id': 0,
+            'name': 'string'
+          },
+          'role': 'elder',
+          'clanRank': 0,
+          'previousClanRank': 0,
+          'donations': 0,
+          'donationsReceived': 0,
+          'clanChestPoints': 0
+        }
+      ]
+    }
+
+    return Promise.resolve(new Clan(data))
+  }
 }
