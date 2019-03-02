@@ -1,6 +1,12 @@
 # Clash Royale API Wrapper
 :package: A Javascript wrapper for Oficial Clash Royale API :video_game: - https://developer.clashroyale.com
 
+[![travis build](https://img.shields.io/travis/chgasparoto/clash-royale-api.svg?style=flat-square)](https://travis-ci.org/chgasparoto/clash-royale-api)
+[![codecov coverage](https://img.shields.io/codecov/c/github/chgasparoto/clash-royale-api.svg?style=flat-square)](https://codecov.io/gh/chgasparoto/clash-royale-api)
+[![version](https://img.shields.io/npm/v/clash-royale-api.svg?style=flat-square)](https://www.npmjs.com/package/clash-royale-api)
+[![downloads](https://img.shields.io/npm/dt/clash-royale-api.svg?style=flat-square)](https://www.npmjs.com/package/clash-royale-api)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/chgasparoto/clash-royale-api/blob/master/LICENSE)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
