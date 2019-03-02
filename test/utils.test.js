@@ -1,5 +1,7 @@
 import { requester } from '../src/utils'
 
+const request = requester('MY_TOKEN')
+
 test('should return a Promise', async() => {
-  requester('bla').then(res => expect(res).toBeTrue)
+  request().then(res => expect(res).toBeTrue)
 })
