@@ -13,7 +13,8 @@
     "test:coverage": "npm test -- --coverage",
     "travis-deploy-once": "travis-deploy-once",
     "semantic-release": "semantic-release",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
