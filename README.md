@@ -1,5 +1,5 @@
 # Clash Royale API Wrapper
-:package: A Javascript wrapper for Oficial Clash Royale API - https://developer.clashroyale.com
+:package: A Javascript wrapper for Oficial Clash Royale API :video_game: - https://developer.clashroyale.com
 
 ## Getting Started
 
