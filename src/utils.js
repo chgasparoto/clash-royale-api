@@ -18,7 +18,7 @@ export function requester (token) {
 
       return response.data
     } catch (error) {
-      throw new Error(error.message)
+      throw new Error(error)
     }
   }
 }

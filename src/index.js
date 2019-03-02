@@ -12,6 +12,11 @@ import { requester } from './utils'
 class Client {
   constructor (token = null, request = requester) {
     this.token = token || process.env.CLASH_ROYALE_API_TOKEN
+
+    if (!this.token) {
+      throw new Error(`Invalid Token: ${token}`)
+    }
+
     this.request = requester(this.token)
   }
 
