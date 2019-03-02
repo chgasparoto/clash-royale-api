@@ -9,16 +9,155 @@ These instructions will get you a copy of the project up and running on your loc
 
 What things you need to install the software and how to install them
 
-```
+```sh
 node -v
-node: v6
+node: v6.0.0
 ```
 
-### Installing
+## Installing
+
+#### Using npm
+```sh
+npm install --save clash-royale-api
+```
+
+#### Using Yarn
+```sh
+yarn add clash-royale-api
+```
+
+## How to use
+
+1. Go to [Clash Royale Developer Website](https://developer.clashroyale.com) to get your Token;
+2. You can use your Token injecting directly inside the constructor or you can use an environment variable to store it;
+3. By default `axios` is used to call the API, if you want to use a different HTTP client, you must provide it as the second argument of the constructor.
+
+#### Importing with Commonjs style
+
+```javascript
+const Client = require('clash-royale-api')
+```
+
+#### Importing with ES6 modules style
+
+```javascript
+import Client from 'clash-royale-api'
+```
+
+#### Examples
+
+Using the Token as an environment variable:
+1. Create an environment variable with the command: `export CLASH_ROYALE_API_TOKEN=MY_TOKEN`
+2. Rename the file `.env.example` to `.env` and set the Token inside it
+3. Injecting directly inside the client constructor `const clashroyale = new Client(MY_TOKEN)`
+
+#### Get Clans
+```javascript
+const clashroyale = new Client()
+
+// Filtering by name
+const clans = clashroyale.clans('Awesome Clan')
+
+// Filtering by multiple fields
+const filters = {
+  name: 'my awesome clan',
+  minMembers: 40,
+  locationId: 57000038,
+  limit: 5
+}
+const clans = clashroyale.clans(filter)
+
+// Getting the records
+clans.then(res => {
+  // All records
+  console.log(res.all)
+}).catch(err => {
+  console.error(err)
+})
+```
+
+#### Get Clan by tag
+```javascript
+const clashroyale = new Client()
+
+// Filtering by tag, it returns the specific clan data.
+const clan = await clashroyale.clan('#1234TAG')
+console.log(clan.all)
+
+// Members list
+console.log(clan.members)
+
+// Leader
+console.log(clan.leader)
+
+// Coleaders
+console.log(clan.coleaders)
+
+// Elders
+console.log(clan.elders)
+
+```
+
+#### Get Clan Warlog
+```javascript
+const clashroyale = new Client()
+
+// Filtering by tag, it returns the specific clan data.
+const clanWarlog = await clashroyale.clan('#1234TAG', 'warlog')
+console.log(clan.all)
+```
+
+#### Get Clan Current War
+```javascript
+const clashroyale = new Client()
+
+// Filtering by tag, it returns the specific clan data.
+const clanWarlog = await clashroyale.clan('#1234TAG', 'currentwar')
+console.log(clan.all)
+```
+
+#### Full API reference
+```javascript
+const clashroyale = new Client()
+
+// Clans
+const clans = await clashroyale.clan(`name:string or filters:object`)
+const clan = await clashroyale.clan('#1234TAG')
+const clanWarlog = await clashroyale.clan('#1234TAG', 'warlog')
+const clanWCurrentWar = await clashroyale.clan('#1234TAG', 'currentwar')
+
+// Players
+const player = await clashroyale.player('#1234TAG')
+const playerUpcomingChests = await clashroyale.player('#1234TAG', 'upcomingchests')
+const playerBattleLog = await clashroyale.player('#1234TAG', 'battlelog')
+
+// Tournaments
+const tournaments = await clashroyale.tournaments('tournament name')
+const tournament = await clashroyale.tournament('#123TAG')
+const globalTournaments = await clashroyale.globalTournaments()
+
+// Cards
+const cards = await clashroyale.cards()
+
+// Locations
+const locations = await clashroyale.locations([`limit:int`])
+const location = await clashroyale.location('locationId')
+const clansRankingByLocation = await clashroyale.location(123456, 'rankings/clans')
+const playersRankingByLocation = await clashroyale.location(123456, 'rankings/players')
+const clansWarsRankingByLocation = await clashroyale.location(123456, 'rankings/clanwars')
+```
 
 ## Running the tests
 
 To run the tests go to the terminal and enter `npm run test`
+
+## TODO
+- [x] first version covering all endpoints
+- [ ] 100% unit test coverage
+- [ ] CI/CD with `sematinc-release` integrating with `Travis`, `Github` and `NPM registry`
+- [ ] better api for future versions. E.g. `await clashroyale.player('#1234TAG').chests()` for upcoming chests or players ranking by location `await clashroyale.location(123456).ranking('players')`
+- [ ] full API page documentation
+- [ ] integration examples
 
 ## Contributing
 

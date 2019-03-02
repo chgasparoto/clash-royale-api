@@ -67,7 +67,7 @@ class Client {
     return new Tournament(response)
   }
 
-  async globaltournaments () {
+  async globalTournaments () {
     const response = await this.request('globaltournaments')
     return new GlobalTournament(response)
   }
