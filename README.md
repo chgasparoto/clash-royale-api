@@ -29,8 +29,8 @@ yarn add clash-royale-api
 ## How to use
 
 1. Go to [Clash Royale Developer Website](https://developer.clashroyale.com) to get your Token;
-2. You can use your Token injecting directly inside the constructor or you can use an environment variable to store it;
-3. By default `axios` is used to call the API, if you want to use a different HTTP client, you must provide it as the second argument of the constructor.
+2. You can use your Token injecting directly inside the client constructor or you can use an environment variable to store it;
+3. By default `axios` is used to call the API, if you want to use a different HTTP client, you must provide it as the second argument of the client constructor.
 
 #### Importing with Commonjs style
 
@@ -65,7 +65,7 @@ const filters = {
   locationId: 57000038,
   limit: 5
 }
-const clans = clashroyale.clans(filter)
+const clans = clashroyale.clans(filters)
 
 // Getting the records
 clans.then(res => {
@@ -124,7 +124,7 @@ const clashroyale = new Client()
 const clans = await clashroyale.clan(`name:string or filters:object`)
 const clan = await clashroyale.clan('#1234TAG')
 const clanWarlog = await clashroyale.clan('#1234TAG', 'warlog')
-const clanWCurrentWar = await clashroyale.clan('#1234TAG', 'currentwar')
+const clanCurrentWar = await clashroyale.clan('#1234TAG', 'currentwar')
 
 // Players
 const player = await clashroyale.player('#1234TAG')
@@ -155,7 +155,7 @@ To run the tests go to the terminal and enter `npm run test`
 - [x] first version covering all endpoints
 - [ ] 100% unit test coverage
 - [ ] CI/CD with `sematinc-release` integrating with `Travis`, `Github` and `NPM registry`
-- [ ] better api for future versions. E.g. `await clashroyale.player('#1234TAG').chests()` for upcoming chests or players ranking by location `await clashroyale.location(123456).ranking('players')`
+- [ ] enhanced API for future versions. E.g. `await clashroyale.player('#1234TAG').chests()` for player upcoming chests
 - [ ] full API page documentation
 - [ ] integration examples
 
