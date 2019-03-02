@@ -154,7 +154,7 @@ To run the tests go to the terminal and enter `npm run test`
 ## TODO
 - [x] first version covering all endpoints
 - [ ] 100% unit test coverage
-- [ ] CI/CD with `sematinc-release` integrating with `Travis`, `Github` and `NPM registry`
+- [x] CI/CD with `sematinc-release` integrating with `Travis`, `Github` and `NPM registry`
 - [ ] enhanced API for future versions. E.g. `await clashroyale.player('#1234TAG').chests()` for player upcoming chests
 - [ ] full API page documentation
 - [ ] integration examples
