@@ -5,6 +5,8 @@
 [![codecov coverage](https://img.shields.io/codecov/c/github/chgasparoto/clash-royale-api.svg?style=flat-square)](https://codecov.io/gh/chgasparoto/clash-royale-api)
 [![version](https://img.shields.io/npm/v/clash-royale-api.svg?style=flat-square)](https://www.npmjs.com/package/clash-royale-api)
 [![downloads](https://img.shields.io/npm/dt/clash-royale-api.svg?style=flat-square)](https://www.npmjs.com/package/clash-royale-api)
+[![style](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![quality](https://img.shields.io/lgtm/grade/javascript/g/middyjs/middy.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/chgasparoto/clash-royale-api/overview/)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/chgasparoto/clash-royale-api/blob/master/LICENSE)
 
 ## Getting Started
